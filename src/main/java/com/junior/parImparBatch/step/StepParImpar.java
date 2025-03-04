@@ -1,10 +1,9 @@
 package com.junior.parImparBatch.step;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.function.FunctionItemProcessor;
 import org.springframework.batch.item.support.IteratorItemReader;
@@ -14,7 +13,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
+@Log4j2
 @Configuration
 public class StepParImpar {
 
@@ -29,10 +30,12 @@ public class StepParImpar {
     }
 
     public ItemWriter<String> writeParImpar() {
+            log.info("Escrevendo os números");
             return itens -> itens.forEach(System.out::println);
     }
 
     public FunctionItemProcessor<Integer, String> processorParImpar() {
+        log.info("Processando os números");
         return  new FunctionItemProcessor<Integer,String>
                 (numero -> numero %2 == 0?String.format("Número %s é par",numero):String.format("Número %s é impar",numero));
     }
