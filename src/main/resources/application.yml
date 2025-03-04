@@ -2,9 +2,15 @@ spring:
   application:
     name: parImpar
   datasource:
-    url:  jdbc:mysql://localhost:3307/spring_batch
+    jdbcUrl:  jdbc:mysql://localhost:3307/spring_batch
     username: root
     password: root
   batch:
     jdbc:
       initialize-schema:  always
+
+app:
+  datasource:
+    jdbcUrl:  jdbc:mysql://localhost:3307/appSpring
+    username: root
+    password: root
