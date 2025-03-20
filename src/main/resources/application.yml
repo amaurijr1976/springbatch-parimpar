@@ -14,3 +14,5 @@ app:
     jdbcUrl:  jdbc:mysql://localhost:3307/appSpring
     username: root
     password: root
+  file: D://Junior//desenvolvimento//git_local//estudo_SpringBatch//springbatch-parimpar//files//clientes.txt
+  fileMultiplosRegistros: D://Junior//desenvolvimento//git_local//estudo_SpringBatch//springbatch-parimpar//files//clientesMultiplosRegistros.txt

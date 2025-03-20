@@ -14,10 +14,10 @@ public class BatchConfig {
     
     @Bean
     public Job  jobParImpar(JobRepository jobRepository,
-                            PlatformTransactionManager transationManager,
-                            Step stepParImpar){
-        return new JobBuilder("jobParImpar",jobRepository)
-                .start(stepParImpar)
+                            PlatformTransactionManager transationManager
+                            ,Step flatStep){
+        return new JobBuilder("job",jobRepository)
+                .start(flatStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
